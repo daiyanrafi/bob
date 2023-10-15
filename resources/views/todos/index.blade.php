@@ -1,5 +1,18 @@
 @extends('layouts.app')
 
+@section('styles')
+<style>
+  #outer
+{
+    width:auto;
+    text-align: center;
+}
+.inner
+{
+    display: inline-block;
+}
+</style>
+
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
@@ -12,6 +25,12 @@
                 @if (Session::has('alert-success'))
                 <div class="alert alert-success" role="alert">
                   {{ session::get('alert-success') }}
+                </div>
+                @endif
+
+                @if (Session::has('error'))
+                <div class="alert alert-danger" role="alert">
+                  {{ session::get('error') }}
                 </div>
                 @endif
 
@@ -37,12 +56,12 @@
             <a class="btn btn-sm btn-danger" href="">Not Completed</a>
         @endif
       </td>
-      <td>
-        <a class="btn btn-sm btn-success" href="">View</a>
-      <a class="btn btn-sm btn-info" href="">Edit</a>
-        <form action="">
+      <td id="outer">
+        <a class="inner btn btn-sm btn-success" href="{{ route('todos.show', $todo->id) }}">View</a>
+      <a class="inner btn btn-sm btn-info" href="">Edit</a>
+        <form action="" class="inner">
           <input type="hidden" name="todo_id" value="{{ $todo->id }}">
-          <input type="submit" class="btn btn-sm btn-info">
+          <input type="submit" class="btn btn-sm btn-danger" value="Delete">
         </form>
       </td>
     </tr>
