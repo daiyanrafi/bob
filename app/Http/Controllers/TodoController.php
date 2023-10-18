@@ -31,14 +31,12 @@ class TodoController extends Controller
             'is_completed' => false,
         ]);
 
+        //         $obs = new Todo();
+        // $obs ->title = $request->title;
 
-
-//         $obs = new Todo();
-// $obs ->title = $request->title;
-
-// //dd($request->title);
-// $obs ->description = $request->description;
-// $obs ->save();
+        // //dd($request->title);
+        // $obs ->description = $request->description;
+        // $obs ->save();
 
         $request->session()->flash('success', 'Todo created successfully');
 
@@ -48,12 +46,14 @@ class TodoController extends Controller
     public function show($id)
     {
         $todo = Todo::find($id);
-        if(! $todo){
+        if (! $todo) {
             $request->session()->flash('error', 'Unable to locate the todo');
+
             return to_route('todos.index')->withErrors([
-                'error' => 'Unable to locate the todo'
+                'error' => 'Unable to locate the todo',
             ]);
         }
-        return view('todos.show',['todo' => $todo]);
+
+        return view('todos.show', ['todo' => $todo]);
     }
 }
