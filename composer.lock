@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "983f3c1165b993c970baba76bfef3b2a",
+    "content-hash": "81ee57557561f2977f818facc1f8066b",
     "packages": [
         {
             "name": "brick/math",
@@ -3166,6 +3166,76 @@
                 }
             ],
             "time": "2023-04-15T23:01:58+00:00"
+        },
+        {
+            "name": "spinen/laravel-clickup",
+            "version": "1.3.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/spinen/laravel-clickup.git",
+                "reference": "6b8511955423ea8f9ecc6d9f2c0cf696ccf05b60"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/spinen/laravel-clickup/zipball/6b8511955423ea8f9ecc6d9f2c0cf696ccf05b60",
+                "reference": "6b8511955423ea8f9ecc6d9f2c0cf696ccf05b60",
+                "shasum": ""
+            },
+            "require": {
+                "ext-json": "*",
+                "guzzlehttp/guzzle": "^7.0",
+                "laravel/framework": "^9.19|^10",
+                "nesbot/carbon": "^2.62.1",
+                "php": "^8.0.2"
+            },
+            "require-dev": {
+                "laravel/pint": "^1.4",
+                "mockery/mockery": "^1.5.1",
+                "phpunit/phpunit": "^9.5.8",
+                "psy/psysh": "^0.11",
+                "scrutinizer/ocular": "^1.9",
+                "squizlabs/php_codesniffer": "^3.7"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Spinen\\ClickUp\\Providers\\ClientServiceProvider",
+                        "Spinen\\ClickUp\\Providers\\ServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Spinen\\ClickUp\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jimmy Puckett",
+                    "email": "jimmy.puckett@spinen.com"
+                },
+                {
+                    "name": "Stephen Finney",
+                    "email": "stephen.finney@spinen.com"
+                }
+            ],
+            "description": "SPINEN's Laravel Package for ClickUp.",
+            "keywords": [
+                "ClickUp",
+                "client",
+                "laravel",
+                "spinen"
+            ],
+            "support": {
+                "issues": "https://github.com/spinen/laravel-clickup/issues",
+                "source": "https://github.com/spinen/laravel-clickup/tree/1.3.0"
+            },
+            "time": "2023-03-14T02:43:12+00:00"
         },
         {
             "name": "symfony/console",
